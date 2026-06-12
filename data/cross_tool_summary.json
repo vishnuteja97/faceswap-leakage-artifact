@@ -1,0 +1,41 @@
+[
+  {
+    "tool": "FaceFusion",
+    "n_train": 57048,
+    "n_test": 10667,
+    "fit_cos": 0.7694925800741461,
+    "r2": 0.5852187278526229,
+    "rho_B": 0.894426442526234,
+    "sigma_max_B": 10.104815325175899,
+    "b_u": 0.18279433250427246,
+    "residual_fraction": 0.414401959015695,
+    "measured_ratio_late": 0.8934054589877612,
+    "cascade_measurement": "5-pass new cascade"
+  },
+  {
+    "tool": "BlendFace",
+    "n_train": 56848,
+    "n_test": 10397,
+    "fit_cos": 0.6467667464018,
+    "r2": 0.39936485009288825,
+    "rho_B": 0.9195466223440232,
+    "sigma_max_B": 15.117979852313171,
+    "b_u": 0.21928374469280243,
+    "residual_fraction": 0.6002750092703789,
+    "measured_ratio_late": 0.88,
+    "cascade_measurement": "existing 3-pass: 0.137->0.104->0.091"
+  },
+  {
+    "tool": "CanonSwap",
+    "n_train": 16849,
+    "n_test": 7239,
+    "fit_cos": 0.5991397291994887,
+    "r2": 0.33793111038147106,
+    "rho_B": 0.8542101604566494,
+    "sigma_max_B": 7.814850860016803,
+    "b_u": 0.19768692553043365,
+    "residual_fraction": 0.6615635687280416,
+    "measured_ratio_late": 0.79,
+    "cascade_measurement": "existing 3-pass: 0.125->0.078->0.062"
+  }
+]
