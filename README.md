@@ -107,3 +107,12 @@ face-swapping tools, or train models; those require the full image corpora and
 GPUs and are out of scope for this lightweight artifact, though the provenance
 manifests above make end-to-end reproduction possible. All recognizers and
 face-swapping tools referenced are publicly available research systems.
+
+## License
+
+The code and derived data files in this artifact are released under the MIT
+License (see `LICENSE`). The provenance manifests reference images from the
+public VGGFace2-HQ dataset, which remains subject to its own dataset terms; we
+redistribute no source images. The face recognition models and face-swapping
+tools referenced are the property of their respective authors under their own
+licenses.
