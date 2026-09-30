@@ -1,0 +1,19 @@
+{
+  "n_train": 57048,
+  "n_test_available": 10667,
+  "n_test_evaluated": 2000,
+  "metrics": {
+    "mse": 0.0016169504960998893,
+    "mean_r2": 0.15945036709308624,
+    "median_r2": 0.15963530540466309,
+    "mean_cos_pred_swap": 0.4420611560344696,
+    "median_cos_pred_swap": 0.4459647536277771,
+    "p10_cos_pred_swap": 0.3587936758995056,
+    "p90_cos_pred_swap": 0.5271816849708557,
+    "mean_cos_pred_donor": 0.4152194559574127,
+    "mean_cos_pred_target": 0.11480685323476791,
+    "mean_cos_real_donor": 0.6555085182189941,
+    "mean_cos_real_target": 0.1705796867609024
+  },
+  "note": "Historical normalized-space baseline; 2000 test samples. Not the full raw-space 10667-test protocol claimed in the table caption."
+}

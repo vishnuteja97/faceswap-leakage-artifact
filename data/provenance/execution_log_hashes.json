@@ -1,0 +1,8 @@
+{
+  "cascade/outputs/gen_deep_status_shard0.jsonl": "41cd7e608ec0219272cb2b46824b879247740dedf321fc6e4e5c7fa81cdea9ef",
+  "cascade/outputs/gen_deep_status_shard1.jsonl": "580eb34e7eaefdf76cc1b94297ea0d1e5f16ed2f7d0fa32d6cd896720639f5bb",
+  "cascade/outputs/gen_deep_status_shard2.jsonl": "3b92d0c0a4f849722e39a9e9aba103e9fe0f1d22c4417920db4cdcc9bc12d794",
+  "cascade/outputs/gen_deep_status_shard3.jsonl": "fdb9a4b1be6809e93ef88b8f0b8d320990faf0aadd30726ba4bddf0309619024",
+  "cascade/outputs/gen_deep_aux_status_blendface.jsonl": "97a05a6e5936400064d3551886d1bc1432dba0d09faec4c62e3b2ee3678d2b58",
+  "cascade/outputs/gen_deep_aux_status_canonswap.jsonl": "97a05a6e5936400064d3551886d1bc1432dba0d09faec4c62e3b2ee3678d2b58"
+}

@@ -9,7 +9,8 @@
     "sigma_max_B": 10.104815325175899,
     "b_u": 0.18279433250427246,
     "residual_fraction": 0.414401959015695,
-    "deep_tail_rate_pass8_to25": 0.9661835469248258
+    "measured_ratio_late": 0.8934054589877612,
+    "cascade_measurement": "5-pass new cascade"
   },
   {
     "tool": "BlendFace",
@@ -21,7 +22,8 @@
     "sigma_max_B": 15.117979852313171,
     "b_u": 0.21928374469280243,
     "residual_fraction": 0.6002750092703789,
-    "deep_tail_rate_pass8_to25": 0.9350633623531684
+    "measured_ratio_late": 0.88,
+    "cascade_measurement": "existing 3-pass: 0.137->0.104->0.091"
   },
   {
     "tool": "CanonSwap",
@@ -33,6 +35,7 @@
     "sigma_max_B": 7.814850860016803,
     "b_u": 0.19768692553043365,
     "residual_fraction": 0.6615635687280416,
-    "deep_tail_rate_pass8_to25": 0.9462633841874089
+    "measured_ratio_late": 0.79,
+    "cascade_measurement": "existing 3-pass: 0.125->0.078->0.062"
   }
 ]

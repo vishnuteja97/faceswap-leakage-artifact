@@ -1,0 +1,20 @@
+{
+  "source_sha256": "88802d8f71a33f5d80a778910b81319f05424e9d4e38cf198b71ab34c0281988",
+  "operator_source_sha256": "940214b75f85902e6b8bddaa1542023734665abadc2bfeaeeeb0d21ff6f992ed",
+  "n_train": 16849,
+  "n_test": 7239,
+  "identity_disjoint": true,
+  "selected_lambda": 10.0,
+  "max_coefficient_error_vs_stored_float32": 5.327286306644474e-06,
+  "training_gram_precision": "float32 multiplication, float64 solve; bias unregularized",
+  "test_cosine_note": "Per-sample predicted dot unit-swap and prediction norm, exported for this recovered fitted solution. Aggregate test equations independently support R2; these scalar components support cosine for the pinned solution only.",
+  "lambdas": [
+    0.03,
+    0.1,
+    0.3,
+    1.0,
+    3.0,
+    10.0
+  ],
+  "selection": "one seed-11 80/20 row holdout, highest mean validation cosine; not identity-disjoint CV"
+}

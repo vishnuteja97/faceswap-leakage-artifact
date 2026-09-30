@@ -1,0 +1,110 @@
+{
+  "pipeline/source/research/cascade/embed_and_measure.py": {
+    "original_sha256": "ccfde7f69765296c06ba63117f1ce636e4bffee23419fc97a3df53cdbc81ce1e",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/research/cascade/embed_and_measure_deep.py": {
+    "original_sha256": "a213c9f1bc44a025117dad9d59773fd2271cfecdeecb38f1ac23e0d71cf1fa37",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/research/cascade/embed_and_measure_deep_aux.py": {
+    "original_sha256": "2d23b8c9034d844ffd21c1cfb50aa34c674fea68902288cdf8dc6487d9bdcd87",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/research/cascade/gen_cascade.py": {
+    "original_sha256": "11fbe2ccdb5eeb44d3de8b964cac8bea22866c6cc7d4ee4266576b01668cfa1c",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/research/cascade/gen_cascade_deep.py": {
+    "original_sha256": "35f04648757908530807869c63f01b89c6911a073c52c287d97dd9ff8dd86ec6",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/research/cascade/gen_cascade_deep_aux.py": {
+    "original_sha256": "cb650a0dd53ca9e45e1d74c5b35fbf58254e316f8d2bd9e796d2cdf0b64afada",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/research/cascade/select_chains.py": {
+    "original_sha256": "aa97f0655a1a041657ae345dbe057b07cba29c6b8e7c2880e74102f2f9e608bd",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/research/cascade/select_chains_deep.py": {
+    "original_sha256": "9c86b36bbce0f0fdd8dbee53aa19b7c55581ecfdb2022469797ba906bf90bf37",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/research/cascade/select_chains_deep_aux.py": {
+    "original_sha256": "6620990692ad7fa0833b73ada815ca84f8430c27189144ee4b84d0c336c63ec4",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/research/cascade/transplant_deep.py": {
+    "original_sha256": "1d7d85f65455b9e9e1090b8793b06be5edd7e6c8bd16bb74938171293b39f3e6",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/research/cascade/verify_existing.py": {
+    "original_sha256": "512408007837fe96e55d4bb5efc81b321028fbdc1bfd0457800b95174c73f85e",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/research/cascade/verify_quant.py": {
+    "original_sha256": "554ff6b233c8bf08f3aa40a5c5f8102e63b73f366fe139f2e0b840ebb9ce8307",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/research/fits/fit_operator.py": {
+    "original_sha256": "0d6147a14cb15c3bb95fb4dca14500424f08c0bd9c3bb6ea6cafa9b5b46d3c15",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/research/fits/learning_curve.py": {
+    "original_sha256": "dabd6cfcc51310a45a362b2fdfa73035d33ed84e08f7993f448bad0dc1146a5e",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/research/fits/predict_cascade.py": {
+    "original_sha256": "67b87dff30bab91e38eb15145aa62357f528618b549d881f7629ebe29da59a39",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/research/fits/validate_model.py": {
+    "original_sha256": "c79cf3a232e78ebc6fb1a0e41dc8e7dbf36fb26a2498728b67eb1d874946d077",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/research/generality/fit_aux_operators.py": {
+    "original_sha256": "a0d2e846e1e8c3aa8214411336336e2959ce77f8e033a596f8fad7b160a070fe",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/source-data/data/D1/swaps/d1_face_align.py": {
+    "original_sha256": "b2961c41ed06b09e7990c04d92ef94645f84552ff0a595fd68f38b911a47be3c",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/source-data/data/D1/swaps/d1_swap_common.py": {
+    "original_sha256": "016b39e4a5e08da382a40dfd4ff80699082fe6eb4b0a631fab326b0540730ffb",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/source-data/data/D1/swaps/run_blendface.py": {
+    "original_sha256": "2129020cfacfec05996bf4f5588eb0704f34d8f7006c7dd0f9591416f610ec41",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/source-data/data/D1/swaps/run_canonswap.py": {
+    "original_sha256": "c7c5251f4210334257e3ef099ca4a8aabb2324fac410aa08d449ebb236e7a6d4",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/source-data/data/D1/swaps/run_diffface.py": {
+    "original_sha256": "91fcdf247f4740e7231e9ed0a9338ea4d9ac667a1b8ef550e763a78b6ae550d5",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/source-data/data/D1/swaps/run_diffswap.py": {
+    "original_sha256": "9472a001621634284125bec7435907bccc9cf1261816bbf9fc2d8c46b9784f47",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/source-data/data/D1/swaps/run_e4s.py": {
+    "original_sha256": "03412d82e74df6b28ad8395a59a67ca4d043ab2da9b4a5aef22e75a6905bd281",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/source-data/data/D1/swaps/run_facefusion.py": {
+    "original_sha256": "7cacd47418284776fce76dd532f8b7bcd74fd4484b6e4624f0069659cb88ac5d",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/source-data/data/D1/swaps/run_faceshifter.py": {
+    "original_sha256": "d75ae76d2fa95b15fa038ec0f24594f368b73176c1b51c8088c476ab5bcb9052",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  },
+  "pipeline/source/source-data/data/D2/pairs/make_pairs_d2.py": {
+    "original_sha256": "b3f8dd6448a4e49ee66f7de535adfc0007f7ad7b75011162d078b9ae5c4b6a8e",
+    "change": "Machine path prefix replaced with /opt/reproduction; otherwise unchanged."
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "blendface": {
+    "n": 948,
+    "auc_rand": 0.954,
+    "tpr_rand": 61.3,
+    "auc_hard": 0.882,
+    "tpr_hard": 23.8,
+    "mean_nm_rand": 0.0077,
+    "mean_nm_hard": 0.0423,
+    "med_target": 0.1334,
+    "mean_tie": 377
+  },
+  "canonswap": {
+    "n": 948,
+    "auc_rand": 0.93,
+    "tpr_rand": 51.9,
+    "auc_hard": 0.851,
+    "tpr_hard": 25.6,
+    "mean_nm_rand": 0.0068,
+    "mean_nm_hard": 0.0356,
+    "med_target": 0.1193,
+    "mean_tie": 377
+  },
+  "diffface": {
+    "n": 947,
+    "auc_rand": 0.833,
+    "tpr_rand": 26.0,
+    "auc_hard": 0.74,
+    "tpr_hard": 9.9,
+    "mean_nm_rand": 0.0046,
+    "mean_nm_hard": 0.0257,
+    "med_target": 0.0691,
+    "mean_tie": 377
+  },
+  "e4s": {
+    "n": 948,
+    "auc_rand": 0.729,
+    "tpr_rand": 12.4,
+    "auc_hard": 0.649,
+    "tpr_hard": 5.8,
+    "mean_nm_rand": 0.0075,
+    "mean_nm_hard": 0.0219,
+    "med_target": 0.0468,
+    "mean_tie": 377
+  },
+  "facefusion": {
+    "n": 948,
+    "auc_rand": 0.89,
+    "tpr_rand": 30.2,
+    "auc_hard": 0.809,
+    "tpr_hard": 15.4,
+    "mean_nm_rand": 0.008,
+    "mean_nm_hard": 0.0304,
+    "med_target": 0.0912,
+    "mean_tie": 377
+  },
+  "faceshifter": {
+    "n": 948,
+    "auc_rand": 0.976,
+    "tpr_rand": 85.2,
+    "auc_hard": 0.92,
+    "tpr_hard": 50.9,
+    "mean_nm_rand": 0.0042,
+    "mean_nm_hard": 0.0531,
+    "med_target": 0.1956,
+    "mean_tie": 377
+  },
+  "diffswap": {
+    "n": 948,
+    "auc_rand": 0.993,
+    "tpr_rand": 96.7,
+    "auc_hard": 0.971,
+    "tpr_hard": 75.7,
+    "mean_nm_rand": 0.0092,
+    "mean_nm_hard": 0.079,
+    "med_target": 0.2888,
+    "mean_tie": 377
+  }
+}

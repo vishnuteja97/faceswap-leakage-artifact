@@ -1,0 +1,10 @@
+diff --git a/exec.sh b/exec.sh
+index 59ed3e8..a6a637f 100644
+--- a/exec.sh
++++ b/exec.sh
+@@ -1,4 +1,4 @@
+ #!/bin/sh
+ docker run -it --gpus all --shm-size 64G \
+-    -v /path/to/this/repository:/workspace/ \
++    -v /opt/reproduction/BlendFace:/workspace/ \
+     pytorch/pytorch:1.13.1-cuda11.6-cudnn8-runtime bash

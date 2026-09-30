@@ -1,0 +1,193 @@
+Camera-ready artifact audit — 2026-09-30
+Reference: paper/camera_ready.tex (SHA-256 in data/camera_ready_reference.json)
+
+Release scope
+-------------
+This is a local update of the artifact. Source manuscripts and experiment outputs
+were not edited. No new face swaps were generated. Saved scores were exported,
+and missing cascade negative scores were recovered from retained embeddings on
+CPU. Face/context composites and recognition were rerun on retained images to
+recover complete negative scores. Linear operators were refitted on CPU from
+exported aggregate statistics. The figure-source Monte Carlo calculation was
+replayed on CPU. These recovery operations are distinguished from historical runs.
+
+Confirmed numerical coverage
+----------------------------
+* All 84 single-swap table entries reproduce from similarity_scores.csv.
+* All 75 cascade passes reproduce saved target medians, pooled-control floors,
+  AUC, and quantile-threshold TPR at 1% and 0.1% nominal FPR.
+* Deep-tail fits from passes 8..25 reproduce 0.966, 0.935, 0.946.
+* Pass-25 AUCs reproduce 0.602, 0.599, 0.553.
+* Operator rho(B) and sigma_max(B) reproduce directly from the saved B matrices.
+* All 45 face/context table entries independently reproduce from complete scores:
+  37140 target scores and 371400 negatives. Maximum target-score error against
+  the original CSV is zero; maximum AUC error against saved results is 1.11e-16.
+* Three A/B/c fits are independently solved from normal equations. Held-out R^2
+  and b_u reproduce the manuscript values. Identity-disjoint train/test splits
+  are checked from released donor/target identity manifests.
+* Original single-swap scores, rankings, operators, and five-pass measurements
+  remain preserved in legacy/original_submission/. The updated rankings add the
+  missing pair_id join without changing any rank or gallery size.
+
+Known manuscript discrepancies and distinctions
+----------------------------------------------
+1. Cohort: methods claim a common 947-pair panel, but the published table uses
+   948 valid pairs for six tools and 947 for DiffFace. pair_0715 accounts for the
+   difference. Default reproduction retains the table inputs and labels them.
+   --common-cohort is a separately labelled sensitivity analysis.
+
+2. Means: default artifact FaceFusion target mean is 0.09749953 (prints 0.097 at
+   three decimals), versus paper 0.098; E4S donor mean is 0.24545114 versus paper
+   0.246. The common 947-pair means are 0.09760583 and 0.24562222, respectively.
+   These tiny differences should not be concealed by relabelling the cohorts.
+   The unused/legacy ffDonorSim macro 0.453 also differs from mean 0.45246024.
+
+3. First-pass FaceFusion excess ratio: the revised pooled floor and the figure's
+   0.616 calibration give 0.138 (approximately 0.13804), whereas prose retains
+   the original five-pass-analysis value 0.139. The artifact computes the revised
+   ratio and preserves the old calculation only as historical evidence.
+
+4. Thresholds: the deep evaluator's 99th/99.9th percentile negative threshold is
+   not a strict empirical <=1%/<=0.1% FPR rule. With 4780 negatives, nominal 1%
+   gives actual 48/4780 = 1.004184%; with 9990 negatives, 100/9990 = 1.001001%.
+   The new output shows both conventions and achieved FPR rather than silently
+   substituting one. Individual negatives within a chain are not independent
+   people-level trials; this release does not provide inferential confidence
+   intervals or new population-wide privacy guarantees.
+
+5. Floors and prediction metrics must be distinguished. The saved auxiliary
+   floor values in aux_predicted_floors.json are 0.004363889 (BlendFace)
+   and 0.001853371 (CanonSwap), versus prose 0.008 and 0.003. The replayed current
+   figure-source simulation gives final-three-pass mean unrelated cosines of
+   0.004672916, 0.005518881, and -0.000665397 (FaceFusion, BlendFace, CanonSwap).
+   Those Monte Carlo averages are not Lyapunov plateaus. The older FaceFusion
+   predicted_curve.json is kept separately and is not substituted for the current
+   three-panel figure calculation. Simulations score mean cosine to a source-image
+   direction; measured curves use medians against different-image galleries.
+
+6. The manuscript says excess leakage below 0.01 took >25 passes depending on
+   the tool. CanonSwap's measured pass-25 excess is already about 0.0085; the other
+   tools remain above 0.01 there. A fitted crossing (25.2 for CanonSwap, 31.1 for
+   BlendFace, 38.8 for FaceFusion) is an extrapolation/curve fit, not a measured
+   threshold crossing. The reproduction labels it accordingly.
+
+7. Model baseline table: six raw-space baseline rows have supporting recorded
+   summaries in model_validation.json. The kNN row's 0.442 cosine and 0.16 R^2
+   trace to a historical normalized-space run evaluated on 2000 examples, not
+   the full 10667-example raw-space test protocol described by the table caption.
+   Its actual provenance is retained in recorded/knn_baseline.json. The learning
+   curve is also a separate fixed split (10443 test examples), with up to 56825
+   training examples; it is not the main 57048/10667 operator split.
+
+8. Persistent-direction correlations: the figure-source code forms 40 real/imaginary
+   columns from the top 20 eigenvectors and uses every QR column, despite linear
+   dependence from complex-conjugate eigenvectors. QR can add arbitrary orthogonal
+   directions outside the intended eigenspace. Replaying this calculation can
+   change correlations across numerical libraries. The release retains scalar
+   alignments from that historical QR convention and adds a corrected SVD
+   rank-aware basis. reproduce_diagnostics.py labels both; neither is relabelled
+   to force agreement with the prose's 0.21/0.22/0.21 and approximately -0.02.
+   Corrected diagnostic values are an artifact correction, not claimed to be
+   the exact camera-ready measurements. Original score data and B are unchanged.
+
+9. Monotonicity and ordering: deep per-pass medians/excess ratios fluctuate.
+   Neither strict stepwise decrease nor a universal cross-tool ordering should
+   be inferred from the overall decay trend. Deep-tail fits do not follow the
+   fitted spectral-radius ordering. The original artifact mixed FaceFusion's
+   fifth-pass ratio with other tools' third-pass ratios; current output uses
+   the same 8..25 fitting range for all tools.
+
+10. Regularization selection: FaceFusion uses five identity-disjoint folds, seed 1,
+    and mean fold MSE. Auxiliary tools use one seed-11 80/20 ROW holdout and
+    highest mean validation cosine, not five identity-disjoint folds as the
+    manuscript's general description suggests. The final train/test identity
+    split is disjoint for all three tools; this does not make auxiliary inner
+    validation identity-disjoint. Released configs preserve the actual methods.
+
+11. Harder non-members: the exact historical selected identities were not found.
+    The released reconstruction selects the highest source-image cosine over all
+    stored photos among the saved maximum-MAAD-score tie group, independently
+    for each target; negative identity reuse is allowed. The saved top-1000
+    ranking truncates 84 of 948 maximum-score groups. The mean retained group
+    size is about 377, compared with about 445 before truncation. Complete
+    reconstruction assignments, candidate scores and resulting swap scores are
+    released, but they must not be described as the historical paper experiment.
+
+    Tool          reconstructed/paper AUC    reconstructed/paper TPR@1% (%)
+    BlendFace          .881 / .882                      26.5 / 23.8
+    CanonSwap          .855 / .851                      25.4 / 25.6
+    DiffFace           .741 / .740                      11.7 /  9.9
+    DiffSwap           .972 / .971                      80.1 / 75.7
+    E4S                .662 / .649                       6.2 /  5.8
+    FaceFusion         .809 / .809                      17.1 / 15.4
+    FaceShifter        .918 / .920                      51.8 / 50.9
+
+    A separate five-photo candidate-selection reconstruction also failed to
+    recover the historical values. Its scores and protocol are retained under
+    data/hard_nonmember_five_photo_sensitivity/. Neither attempt was tuned to
+    produce matching published numbers. Close AUCs do not establish identical
+    low-FPR behavior or historical provenance.
+
+Results that are recorded rather than independently recomputed
+-------------------------------------------------------------
+* The historical harder-non-member control remains summary-only; the independently
+  computable reconstruction is a separate experiment with the discrepancies above.
+* Fit cosine is recomputed from per-sample dot/norm scalars for the recovered
+  solution. These scalars cannot evaluate arbitrary new model predictions.
+  Auxiliary CV selection similarly uses per-candidate cosine components rather
+  than independently rebuilding all candidate predictions from embeddings.
+* Residual diagnostics, model baselines and learning curves remain saved results.
+  Per-triplet embeddings and all fitted baseline models are not distributed.
+  Aggregate normal equations now support main-operator refitting, R^2 and b_u;
+  they do not reconstruct the original images or supply every baseline input.
+* Figure Monte Carlo curves are recorded outputs of a replay of the source script;
+  the full donor bank, residual model inputs, and training corpus are not released.
+* Nonlinear-improvement and some formal residual-distribution claims do not have
+  a complete independently reproducible input bundle here. The artifact does not
+  claim to validate those manuscript statements.
+* Image quality illustrations, t-SNE, visual examples, and end-to-end generation
+  are outside the released score-based reproduction. No identifiable source
+  photographs or synthetic illustration files are needed or bundled.
+
+Original versus revised controls
+--------------------------------
+The first-five-pass FaceFusion target scores are unchanged. Original single
+negative assignment used the ordered 500-chain manifest; revised assignment
+uses the 478 completed-chain manifest, changing 430 assignments. Revised primary
+AUC then pools ten controls per chain. Thus original pass-5 AUC 0.70882425 and
+revised pooled AUC 0.71632893 are different evaluations of the same target scores.
+
+Provenance limits
+-----------------
+External data/model/setup links and expected filenames are listed in
+EXTERNAL_RESOURCES.md. The benchmark requires published VGGFace2-HQ images;
+raw VGGFace2 and an additional universal alignment pass are not equivalent inputs.
+Publisher pages were reviewed, but large downloads and a clean installation were
+not retested. FaceShifter's primary source link is maum-ai/faceshifter, as cited in
+camera_ready.tex. That footnote states that the authors trained their own model
+on CelebA-HQ. The remaining gap is access to the authors' evaluated weights and
+their training/loading provenance, not a missing official pretrained-model link.
+The inspected local checkout has a different remote (graydove/FaceShifter), and
+the bundled inference adapter expects *_280000.pth files. Their relationship to
+the cited training implementation has not been established by this audit.
+
+Exact 25-pass scoring galleries and control-chain assignments are exported using
+dataset-relative paths. Additional donor schedules incorporate 46 FaceFusion
+substitutions from retained completion logs (none recorded for auxiliary tools).
+The logs do not independently attest skipped outputs or unlogged earlier retries.
+Current tool commits, local modifications and checkpoint hashes are exported;
+these are not independently attested historical generation versions. Reference
+orchestration source is bundled with only machine path prefixes replaced.
+Main-fit train/test identity disjointness is verified from the released manifests.
+No claim is made that this release audits dataset identity labels, every raw image,
+or every historical generation parameter. Public dataset identifiers
+are not real-name identity annotations. Source hashes identify the local inputs
+used for this export, not a certification of their original acquisition.
+
+Validation
+----------
+Run validate.py and python -m unittest test_metrics.py test_refit.py. SHA-256 checks protect the
+frozen release files. Numerical checks include recomputation, source-summary
+comparisons, and manuscript-value comparisons, with their different meanings
+labelled in the output. Known discrepancies are documented here rather than
+turned into fabricated matching results.

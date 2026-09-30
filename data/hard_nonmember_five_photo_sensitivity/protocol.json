@@ -1,0 +1,8 @@
+{
+  "selection_images": "five",
+  "sampling": "All photos if at most five, otherwise five equally spaced indices in stored order",
+  "negative_identity_reuse": "allowed",
+  "candidate_group": "stored maximum-MAAD-score tie group",
+  "n_truncated_groups": 84,
+  "source": "Separate reconstruction with older D2 candidate sampling; does not recover exact historical paper assignments"
+}
