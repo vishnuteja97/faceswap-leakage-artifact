@@ -42,7 +42,6 @@ def results(common=False):
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--common-cohort', action='store_true', help='947-pair sensitivity analysis, not the published table')
-    ap.add_argument('--legacy-reid', action='store_true', help='Also report historical CMC, absent from camera-ready')
     args = ap.parse_args()
     print('Cohort:', 'common 947 pairs (sensitivity)' if args.common_cohort else
           'per-tool valid pairs: 947 DiffFace; 948 other tools (published table)')
@@ -56,15 +55,6 @@ def main():
         if r['embedding'] == 'buffalo_l' and r['aggregation'] == 'median':
             print(f"{r['tool']:<12} {r['donor_mean']:.6f} {r['target_mean']:.6f} "
                   f"{r['nonmember_mean']:.6f} {100*r['donor_gt_target']:.1f}")
-    if args.legacy_reid:
-        z = np.load(DATA / 'reid_ranks.npz', allow_pickle=False)
-        print('\nHistorical CMC only: rank 1 / 5 / 10 / 50 (%)')
-        for tool in TOOLS:
-            m = ((z['tool'] == tool) & (z['embedding'] == 'buffalo_l') &
-                 (z['metric'] == 'median') & (z['status'] == 'ok'))
-            if args.common_cohort:
-                m &= np.isin(z['pair_id'], list({r['pair_id'] for r in load_rows(True)}))
-            print(tool, [round(100 * float(np.mean(z['target_rank'][m] <= k)), 1) for k in [1, 5, 10, 50]])
 
 
 if __name__ == '__main__':

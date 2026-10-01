@@ -60,6 +60,6 @@ def main():
             a.output.mkdir(parents=True,exist_ok=True)
             np.savez_compressed(a.output/f'{tool}.npz',A=w[:512].T,B=w[512:1024].T,c=w[-1])
     if a.output:(a.output/'summary.json').write_text(json.dumps(results,indent=2)+'\n')
-    print('R2 and b_u are recomputed from aggregate test statistics. Cosine uses exported per-sample scalar components for the recovered fitted solution. See WALKTHROUGH.md for the limits.')
+    print('R2 and b_u are recomputed from aggregate test statistics. Cosine uses exported per-sample scalar components for the recovered fitted solution; these cannot evaluate arbitrary new models.')
 
 if __name__=='__main__':main()

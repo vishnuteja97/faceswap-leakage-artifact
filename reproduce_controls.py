@@ -41,6 +41,6 @@ def main():
     old=json.loads((DATA/'recorded/hard_nonmember_paper_protocol.json').read_text())
     for tool,r in hard_results().items():
         print(f"{tool:<12} AUC {r['auc']:.3f} vs paper {old[tool]['auc_hard']:.3f}; TPR@1% {100*r['tpr_at_1pct_fpr']:.1f}% vs paper {old[tool]['tpr_hard']:.1f}%")
-    print('Reconstruction uses max over all stored candidate photos, within the retained MAAD ranking. 84 candidate groups are truncated by the historical top-1000 file. See AUDIT.txt.')
+    print('Reconstruction uses max over all stored candidate photos, within the retained MAAD ranking. 84 candidate groups are truncated by the historical top-1000 file.')
 
 if __name__=='__main__':main()

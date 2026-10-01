@@ -1,7 +1,0 @@
-{
-  "selection_images": "all",
-  "negative_identity_reuse": "allowed",
-  "candidate_group": "stored maximum-MAAD-score tie group",
-  "n_truncated_groups": 84,
-  "source": "Recovered protocol; compare against recorded paper values before treating as exact"
-}
